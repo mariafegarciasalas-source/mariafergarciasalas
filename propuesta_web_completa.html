@@ -1,0 +1,570 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif}
+.w{background:#0D1B2A;color:#E8F0F8;width:100%}
+
+/* NAV */
+.nav{background:rgba(10,22,40,.96);border-bottom:1px solid rgba(201,168,76,.2);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100}
+.nav-logo{font-size:13px;font-weight:800;color:#fff;letter-spacing:.5px}
+.nav-logo span{color:#C9A84C}
+.nav-links{display:flex;gap:4px}
+.nav-link{font-size:11px;font-weight:600;color:#7BA8C4;padding:5px 10px;border-radius:20px;cursor:pointer;border:none;background:none;letter-spacing:.5px}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav-cta{font-size:11px;font-weight:700;color:#0A1628;background:#C9A84C;padding:6px 14px;border-radius:20px;cursor:pointer;border:none;letter-spacing:.5px}
+
+/* SECTIONS */
+.sec{padding:64px 36px}
+.sec.alt{background:#091220}
+.pill{display:inline-block;border:1px solid rgba(201,168,76,.5);color:#C9A84C;font-size:9px;font-weight:700;letter-spacing:2.5px;padding:4px 12px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
+.sh{font-size:28px;font-weight:900;color:#fff;line-height:1.18;margin-bottom:6px}
+.sh span{color:#5B9FD4}
+.bar{width:36px;height:3px;background:#C9A84C;margin:12px 0 24px}
+.sub{font-size:13px;color:#7BA8C4;line-height:1.75;max-width:540px}
+.divider{height:1px;background:rgba(255,255,255,.07)}
+
+/* COVER */
+.cover{background:#0A1628;padding:72px 36px 56px}
+.cover h1{font-size:46px;font-weight:900;line-height:1.07;margin-bottom:18px;color:#fff}
+.cover h1 span{color:#C9A84C}
+.cover .csub{font-size:15px;color:#7BA8C4;margin-bottom:36px;line-height:1.7;max-width:500px}
+.cta-btn{display:inline-block;background:#C9A84C;color:#0A1628;font-size:12px;font-weight:800;letter-spacing:1.5px;padding:14px 28px;border-radius:6px;text-transform:uppercase;cursor:pointer;border:none;margin-right:10px;margin-bottom:10px}
+.cta-outline{display:inline-block;background:transparent;border:1.5px solid rgba(91,159,212,.45);color:#5B9FD4;font-size:12px;font-weight:700;letter-spacing:1px;padding:13px 24px;border-radius:6px;text-transform:uppercase;cursor:pointer;margin-bottom:10px}
+.stats-bar{border-top:1px solid rgba(255,255,255,.09);padding-top:28px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.stat .sl{font-size:8px;letter-spacing:2px;color:#3A5A70;text-transform:uppercase;margin-bottom:5px}
+.stat .sv{font-size:22px;font-weight:900;color:#C9A84C;line-height:1}
+.stat .sd{font-size:10px;color:#3A5A70;margin-top:2px}
+
+/* PROBLEMA */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:26px}
+.cd{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:18px}
+.cd .num{font-size:22px;font-weight:900;color:#5B9FD4;margin-bottom:7px}
+.cd p{font-size:12px;color:#7BA8C4;line-height:1.6}
+.ag{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.ac{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:15px}
+.ac .at{font-size:8px;font-weight:700;letter-spacing:2px;color:#C9A84C;text-transform:uppercase;margin-bottom:7px}
+.ac h4{font-size:13px;font-weight:700;color:#fff;line-height:1.3}
+.nc{display:flex;align-items:flex-start;gap:13px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:10px;padding:15px 18px}
+.nc i{font-size:20px;color:#C9A84C;flex-shrink:0;margin-top:2px}
+.nc strong{display:block;font-size:13px;color:#fff;margin-bottom:3px}
+.nc span{font-size:12px;color:#7BA8C4}
+
+/* PILARES */
+.pb{margin-bottom:18px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.ph{display:flex;align-items:flex-start;gap:16px;padding:20px 22px}
+.pn{font-size:38px;font-weight:900;line-height:1;flex-shrink:0;min-width:48px}
+.pt .ptag{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.pt h3{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px;line-height:1.2}
+.pt .ps{font-size:11px;font-style:italic;color:#5A7A90}
+.pp{background:rgba(255,255,255,.04);padding:12px 22px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:flex-start;gap:9px}
+.pp .pl{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#C9A84C;text-transform:uppercase;white-space:nowrap;padding-top:2px}
+.pp p{font-size:11px;color:#7BA8C4;line-height:1.55}
+.pso{padding:16px 22px;border-top:1px solid rgba(255,255,255,.07)}
+.pso .sl2{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#5DCAA5;text-transform:uppercase;margin-bottom:11px}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.en{display:flex;align-items:flex-start;gap:7px;background:rgba(255,255,255,.04);border-radius:7px;padding:9px 11px}
+.en i{font-size:13px;flex-shrink:0;margin-top:2px}
+.en .et{font-size:11px;font-weight:700;color:#C8DCF0;margin-bottom:1px}
+.en .es{font-size:9px;color:#4A6A80;line-height:1.4}
+.cross{background:#112240;border:1px solid rgba(91,159,212,.2);border-radius:12px;padding:18px 22px}
+.ct{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.ci{width:38px;height:38px;border-radius:9px;background:rgba(91,159,212,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct .ctag{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#5B9FD4;margin-bottom:2px}
+.ct h3{font-size:15px;font-weight:900;color:#fff}
+.cpills{display:flex;flex-wrap:wrap;gap:7px}
+.cp{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border-radius:7px;padding:8px 12px}
+.cp i{font-size:13px;color:#5B9FD4;flex-shrink:0}
+.cp span{font-size:11px;color:#8FB3D4;font-weight:500}
+
+/* ROADMAP */
+.rmt{position:relative;padding-left:20px}
+.rl{position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:rgba(255,255,255,.07)}
+.rp{position:relative;margin-bottom:22px}
+.rd{position:absolute;left:-20px;top:4px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;z-index:1}
+.phd{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+.sb{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:12px}
+.phd h3{font-size:13px;font-weight:800;color:#fff}
+.ri2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ri{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:8px 10px;display:flex;align-items:flex-start;gap:6px}
+.ri i{font-size:13px;flex-shrink:0;margin-top:1px}
+.rit{font-size:10px;font-weight:700;color:#C8DCF0;margin-bottom:1px}
+.ris{font-size:9px;color:#5A7A90;line-height:1.4}
+.rqw{background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:11px 13px;margin-top:7px;display:flex;align-items:center;gap:10px}
+.rqw i{font-size:16px;color:#C9A84C;flex-shrink:0}
+.rqwt{font-size:10px;font-weight:800;color:#C9A84C;margin-bottom:1px}
+.rqws{font-size:9px;color:#7B8A6A;line-height:1.4}
+
+/* ENTREGABLES */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.tab{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:5px 12px;font-size:10px;font-weight:600;color:#8FB3D4;cursor:pointer;border:none}
+.tab:hover{background:rgba(255,255,255,.09)}
+.tab.active{background:#C9A84C;color:#0A1628}
+.dp{display:none}
+.dp.active{display:block}
+.dh{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.di{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dh h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:1px}
+.dh p{font-size:10px;color:#5B7A90}
+.mw{background:#111E2E;border:1px solid rgba(255,255,255,.07);border-radius:11px;padding:16px;margin-bottom:10px}
+.mb{display:flex;align-items:center;gap:4px;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.06)}
+.dot{width:6px;height:6px;border-radius:50%}
+.mb span{font-size:9px;color:#3A5A70;margin-left:3px}
+.rt{width:100%;border-collapse:collapse;font-size:11px}
+.rt th{background:rgba(91,159,212,.12);color:#5B9FD4;font-weight:700;padding:6px 8px;text-align:left;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.rt td{padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.05);color:#8FB3D4}
+.bg{display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700}
+.br{background:rgba(91,159,212,.2);color:#5B9FD4}
+.ba{background:rgba(201,168,76,.2);color:#C9A84C}
+.bc{background:rgba(93,202,165,.2);color:#5DCAA5}
+.bi{background:rgba(255,255,255,.07);color:#6B8FA8}
+.leg{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.leg span{font-size:10px;color:#5A7A90}
+.ei2{display:flex;flex-direction:column;gap:8px}
+.eq{background:rgba(255,255,255,.04);border-left:3px solid #5B9FD4;border-radius:0 7px 7px 0;padding:10px 12px}
+.eq .dm{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#5B9FD4;text-transform:uppercase;margin-bottom:3px}
+.eq .q{font-size:11px;color:#C8DCF0;margin-bottom:4px}
+.sc{display:flex;gap:3px}
+.sn{width:24px;height:24px;border-radius:4px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:9px;color:#5A7A90}
+.sn.sel{background:#5B9FD4;border-color:#5B9FD4;color:#0A1628;font-weight:700}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.kp{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:11px}
+.kp .kl{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:#5A7A90;margin-bottom:4px}
+.kp .kv{font-size:24px;font-weight:900;color:#C9A84C;line-height:1}
+.kp .kd{font-size:9px;color:#4A6A80;margin-top:2px}
+.kp .kb{height:3px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:6px}
+.kp .kf{height:3px;border-radius:2px;background:#C9A84C}
+.pi{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.pi:last-child{border-bottom:none}
+.pa{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.pn2{font-size:11px;color:#C8DCF0;font-weight:600;margin-bottom:1px}
+.pr{font-size:9px;color:#5A7A90}
+.aw{margin-left:auto;padding:2px 8px;border-radius:11px;font-size:8px;font-weight:700;white-space:nowrap}
+.ft{font-size:8px;font-weight:700;letter-spacing:2px;color:#5A7A90;text-transform:uppercase;margin-bottom:8px}
+.lcard{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);border-radius:9px;padding:14px}
+.ltop{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.ltop i{font-size:20px;color:#C9A84C}
+.ltop h4{font-size:13px;font-weight:800;color:#fff;margin-bottom:1px}
+.ltop p{font-size:10px;color:#7B8A6A}
+.lteams{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.lt{background:rgba(255,255,255,.05);border-radius:7px;padding:9px;text-align:center}
+.lpos{font-size:16px;font-weight:900;margin-bottom:3px}
+.ltn{font-size:10px;font-weight:700;color:#C8DCF0;margin-bottom:1px}
+.lts{font-size:9px;color:#5A7A90}
+.lpz{margin-top:9px;text-align:center;font-size:10px;color:#7B8A6A;font-style:italic}
+.lcrit{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:11px}
+.lcrit div{background:rgba(255,255,255,.04);border-radius:7px;padding:8px 10px;font-size:10px;color:#8FB3D4}
+.bm{background:#112030;border-radius:9px;overflow:hidden}
+.bh{background:#1B3A6B;padding:12px 16px;display:flex;align-items:center;gap:9px}
+.bl{width:28px;height:28px;border-radius:5px;background:#C9A84C;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#0A1628;flex-shrink:0}
+.bb{padding:13px 16px}
+.bs2{margin-bottom:10px}
+.bst{font-size:8px;font-weight:700;letter-spacing:2px;color:#C9A84C;text-transform:uppercase;margin-bottom:4px}
+.bs2 h4{font-size:11px;font-weight:700;color:#fff;margin-bottom:2px}
+.bs2 p{font-size:10px;color:#7BA8C4;line-height:1.5}
+.bd2{height:1px;background:rgba(255,255,255,.06);margin:9px 0}
+.qa{background:rgba(255,255,255,.04);border-radius:8px;padding:11px;margin-bottom:6px}
+.ql{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#5B9FD4;text-transform:uppercase;margin-bottom:3px}
+.qt{font-size:11px;color:#fff;margin-bottom:5px;font-weight:600}
+.at{font-size:10px;color:#7BA8C4;line-height:1.5;padding-left:9px;border-left:2px solid #C9A84C}
+
+/* METODOLOGÍA */
+.ml{display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.mi{display:flex;align-items:flex-start;gap:12px}
+.mn{width:34px;height:34px;border-radius:50%;background:rgba(91,159,212,.1);border:1px solid rgba(91,159,212,.28);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#5B9FD4;flex-shrink:0}
+.mi h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.mi p{font-size:11px;color:#7BA8C4;line-height:1.55}
+.tg{display:flex;flex-wrap:wrap;gap:6px}
+.tp{border:1px solid rgba(255,255,255,.11);border-radius:20px;padding:4px 11px;font-size:10px;color:#7BA8C4}
+
+/* TRANSFORMACIÓN */
+.trf{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:22px}
+.tc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:18px}
+.tc i{font-size:20px;margin-bottom:9px}
+.tc h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.tc p{font-size:11px;color:#7BA8C4;line-height:1.55}
+.bs3{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:11px;padding:22px 28px;display:flex;align-items:center;gap:18px}
+.bn{font-size:48px;font-weight:900;color:#C9A84C;line-height:1}
+.bn span{font-size:22px;color:#5B9FD4}
+.bs3 p{font-size:13px;color:#8FB3D4;line-height:1.6}
+
+/* CIERRE */
+.closing{padding:72px 36px;text-align:center;background:#091220}
+.closing h2{font-size:32px;font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.closing p{font-size:13px;color:#7BA8C4;max-width:400px;margin:0 auto 26px;line-height:1.7}
+.ft2{font-size:9px;color:#2A4A60;letter-spacing:2px;text-transform:uppercase;margin-top:24px}
+</style>
+
+<div class="w">
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-logo">Propuesta <span>· RD 2025</span></div>
+  <div class="nav-links">
+    <button class="nav-link" onclick="document.getElementById('problema').scrollIntoView()">Diagnóstico</button>
+    <button class="nav-link" onclick="document.getElementById('pilares').scrollIntoView()">Pilares</button>
+    <button class="nav-link" onclick="document.getElementById('roadmap').scrollIntoView()">Roadmap</button>
+    <button class="nav-link" onclick="document.getElementById('entregables').scrollIntoView()">Entregables</button>
+    <button class="nav-link" onclick="document.getElementById('cierre').scrollIntoView()">Contacto</button>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('cierre').scrollIntoView()">Agendar reunión</button>
+</div>
+
+<!-- COVER -->
+<div class="cover" id="inicio">
+  <div class="pill">Propuesta de Transformación Organizacional · República Dominicana · 2025</div>
+  <h1>Deja de operar<br><span>como siempre</span><br>has operado.</h1>
+  <p class="csub">Una empresa constructora que administra proyectos de gran escala necesita una organización interna igual de sólida que sus obras.</p>
+  <button class="cta-btn" onclick="document.getElementById('pilares').scrollIntoView()">Ver la propuesta</button>
+  <button class="cta-outline" onclick="document.getElementById('cierre').scrollIntoView()">Agendar reunión ↗</button>
+  <div class="stats-bar">
+    <div class="stat"><div class="sl">Pilares</div><div class="sv">3</div><div class="sd">ejes de intervención</div></div>
+    <div class="stat"><div class="sl">Proyectos activos</div><div class="sv">6</div><div class="sd">Gerentes de Proyecto</div></div>
+    <div class="stat"><div class="sl">Alcance</div><div class="sv">12<span style="font-size:13px;color:#5B9FD4"> m.</span></div><div class="sd">programa completo</div></div>
+    <div class="stat"><div class="sl">Quick wins</div><div class="sv">Sem. 3</div><div class="sd">resultados visibles</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PROBLEMA -->
+<div class="sec alt" id="problema">
+  <div class="pill">El diagnóstico</div>
+  <div class="sh">Tu organización crece.<br><span>La estructura no lo siguió.</span></div>
+  <div class="bar"></div>
+  <div class="grid2">
+    <div class="cd"><div class="num">01</div><p>Tienes una Mesa de Autonomía, pero nadie sabe con certeza qué puede decidir sin consultar al VP.</p></div>
+    <div class="cd"><div class="num">02</div><p>Los colaboradores se enteran de los cambios tarde o nunca. No hay canales ni protocolos formales.</p></div>
+    <div class="cd"><div class="num">03</div><p>La cultura existe pero no se mide, no se gestiona y no se celebra. Los valores son un poster.</p></div>
+    <div class="cd"><div class="num">04</div><p>El talento se retiene por inercia, no por diseño. No hay Employee Journey ni reconocimiento estructurado.</p></div>
+  </div>
+  <div class="pill" style="margin-bottom:14px">¿Para quién es esta propuesta?</div>
+  <div class="ag">
+    <div class="ac"><div class="at">Gerentes de Proyecto</div><h4>Los que deciden en obra y necesitan respaldo claro del soporte</h4></div>
+    <div class="ac"><div class="at">Áreas de Soporte</div><h4>Transporte, Admin y Construcción que buscan autonomía real</h4></div>
+    <div class="ac"><div class="at">Dirección</div><h4>Los que quieren que la organización opere sin depender de ellos en todo</h4></div>
+  </div>
+  <div class="nc">
+    <i class="ti ti-building" aria-hidden="true"></i>
+    <div><strong>No es un taller. Es una transformación.</strong><span>Cada entregable está conectado a la operación real. Lo que construyamos lo usas desde la semana 1.</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- PILARES -->
+<div class="sec" id="pilares">
+  <div class="pill">Nuestra propuesta · Los tres pilares</div>
+  <div class="sh">La solución que <span>te traemos.</span></div>
+  <div class="bar"></div>
+  <p class="sub" style="margin-bottom:28px">Tres pilares integrados con un problema claro, una solución concreta y entregables medibles. Más un eje transversal que sostiene todo el proceso.</p>
+
+  <!-- P1 -->
+  <div class="pb" style="border-top:4px solid #5B9FD4">
+    <div class="ph" style="background:rgba(91,159,212,.06)">
+      <div class="pn" style="color:#5B9FD4">01</div>
+      <div class="pt"><div class="ptag" style="color:#5B9FD4">Pilar 01 · Gobernanza</div><h3>Modelo de Gobierno y Autonomía</h3><div class="ps">¿Quién decide qué, hasta dónde y con qué respaldo?</div></div>
+    </div>
+    <div class="pp"><span class="pl">Problema</span><p>La Mesa de Autonomía existe pero opera sin criterios claros. Las áreas de soporte consultan al VP decisiones que deberían resolver solas. No hay mapa de autoridad definido.</p></div>
+    <div class="pso">
+      <div class="sl2">Lo que construimos juntos</div>
+      <div class="eg">
+        <div class="en"><i class="ti ti-table" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="et">Matriz RACI completa</div><div class="es">Quién ejecuta, aprueba, consulta e informa por cada decisión</div></div></div>
+        <div class="en"><i class="ti ti-sitemap" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="et">Mapa de toma de decisiones</div><div class="es">Decisiones operativas, tácticas y estratégicas por área</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="pb" style="border-top:4px solid #7BA8D4">
+    <div class="ph" style="background:rgba(91,120,180,.06)">
+      <div class="pn" style="color:#7BA8D4">02</div>
+      <div class="pt"><div class="ptag" style="color:#7BA8D4">Pilar 02 · Comunicación</div><h3>Comunicación Organizacional</h3><div class="ps">¿Cómo se enteran los equipos de lo que transforma la organización?</div></div>
+    </div>
+    <div class="pp"><span class="pl">Problema</span><p>No hay canales formales ni gobernanza comunicacional. Los cambios llegan por rumor o no llegan. Los líderes no tienen herramientas para comunicar con claridad.</p></div>
+    <div class="pso">
+      <div class="sl2">Lo que construimos juntos</div>
+      <div class="eg">
+        <div class="en"><i class="ti ti-antenna" style="color:#7BA8D4" aria-hidden="true"></i><div><div class="et">Estrategia de comunicación interna</div><div class="es">Canales, audiencias, gobernanza y calendario</div></div></div>
+        <div class="en"><i class="ti ti-refresh" style="color:#7BA8D4" aria-hidden="true"></i><div><div class="et">Framework de gestión del cambio</div><div class="es">Antes, durante y después — nunca en silencio</div></div></div>
+        <div class="en"><i class="ti ti-mail" style="color:#7BA8D4" aria-hidden="true"></i><div><div class="et">Boletín de cambios organizacionales</div><div class="es">Comunicación mensual formal y estructurada</div></div></div>
+        <div class="en"><i class="ti ti-user-check" style="color:#7BA8D4" aria-hidden="true"></i><div><div class="et">Toolkit para líderes + Q&A</div><div class="es">Guías, cascadas informativas y talking points</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="pb" style="border-top:4px solid #C9A84C">
+    <div class="ph" style="background:rgba(201,168,76,.06)">
+      <div class="pn" style="color:#C9A84C">03</div>
+      <div class="pt"><div class="ptag" style="color:#C9A84C">Pilar 03 · Cultura</div><h3>Cultura & Fidelización</h3><div class="ps">¿Por qué el colaborador se queda — y da lo mejor de sí?</div></div>
+    </div>
+    <div class="pp"><span class="pl">Problema</span><p>La cultura no se mide ni se gestiona. No hay reconocimiento estructurado. El talento se retiene por inercia, no por diseño.</p></div>
+    <div class="pso">
+      <div class="sl2">Lo que construimos juntos</div>
+      <div class="eg">
+        <div class="en"><i class="ti ti-clipboard-list" style="color:#C9A84C" aria-hidden="true"></i><div><div class="et">Encuesta de clima organizacional</div><div class="es">25 preguntas · 5 dimensiones · toda la org.</div></div></div>
+        <div class="en"><i class="ti ti-chart-bar" style="color:#C9A84C" aria-hidden="true"></i><div><div class="et">Dashboard cultural</div><div class="es">NPS interno · pertenencia · colaboración</div></div></div>
+        <div class="en"><i class="ti ti-star" style="color:#C9A84C" aria-hidden="true"></i><div><div class="et">Programa de fidelización</div><div class="es">Reconocimiento por servicio, hitos y KPIs</div></div></div>
+        <div class="en"><i class="ti ti-trophy" style="color:#C9A84C" aria-hidden="true"></i><div><div class="et">Liga colaborativa</div><div class="es">Premio trimestral a la mesa más colaborativa</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CROSS -->
+  <div class="cross">
+    <div class="ct">
+      <div class="ci"><i class="ti ti-arrows-left-right" style="font-size:18px;color:#5B9FD4" aria-hidden="true"></i></div>
+      <div><div class="ctag">Eje transversal · Los 3 pilares</div><h3>Gestión del Cambio</h3></div>
+    </div>
+    <div class="cpills">
+      <div class="cp"><i class="ti ti-route" aria-hidden="true"></i><span>Acompañamiento en la transición</span></div>
+      <div class="cp"><i class="ti ti-arrows-left-right" aria-hidden="true"></i><span>Comunicación bidireccional</span></div>
+      <div class="cp"><i class="ti ti-shield" aria-hidden="true"></i><span>Mitigación de resistencia</span></div>
+      <div class="cp"><i class="ti ti-ear" aria-hidden="true"></i><span>Espacios de escucha activa</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<div class="sec alt" id="roadmap">
+  <div class="pill">Cómo arrancamos · Primeras 6 semanas</div>
+  <div class="sh">Así son nuestras<br><span>primeras semanas juntos.</span></div>
+  <div class="bar"></div>
+  <p class="sub" style="margin-bottom:26px">No llegamos con recetas. Escuchamos primero, diagnosticamos segundo y diseñamos tercero. Lo que construyamos sale de tu realidad, no de un manual.</p>
+  <div class="rmt">
+    <div class="rl"></div>
+    <div class="rp">
+      <div class="rd" style="background:#0D1B2A;color:#5B9FD4;border:2px solid #5B9FD4">1</div>
+      <div class="phd"><span class="sb" style="background:rgba(91,159,212,.12);color:#5B9FD4">Semana 1–2</span><h3>Escucha activa en campo</h3></div>
+      <div class="ri2">
+        <div class="ri"><i class="ti ti-user" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="rit">Entrevistas VP y dueños</div><div class="ris">Alineación estratégica y expectativas</div></div></div>
+        <div class="ri"><i class="ti ti-hard-hat" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="rit">6 Gerentes de Proyecto</div><div class="ris">Tensiones y necesidades reales de obra</div></div></div>
+        <div class="ri"><i class="ti ti-building" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="rit">Líderes de soporte</div><div class="ris">Transporte, Admin y Construcción</div></div></div>
+        <div class="ri"><i class="ti ti-sitemap" style="color:#5B9FD4" aria-hidden="true"></i><div><div class="rit">Revisión del org chart</div><div class="ris">Estructura real vs. estructura formal</div></div></div>
+      </div>
+    </div>
+    <div class="rp">
+      <div class="rd" style="background:#0D1B2A;color:#5DCAA5;border:2px solid #5DCAA5">2</div>
+      <div class="phd"><span class="sb" style="background:rgba(93,202,165,.1);color:#5DCAA5">Semana 2–4</span><h3>Diagnóstico operativo y cultural</h3></div>
+      <div class="ri2">
+        <div class="ri"><i class="ti ti-map" style="color:#5DCAA5" aria-hidden="true"></i><div><div class="rit">Mapeo de decisiones</div><div class="ris">¿Qué se decide, quién y cómo?</div></div></div>
+        <div class="ri"><i class="ti ti-eye" style="color:#5DCAA5" aria-hidden="true"></i><div><div class="rit">Observación de la Mesa</div><div class="ris">Cómo opera la autonomía en la práctica</div></div></div>
+        <div class="ri"><i class="ti ti-clipboard-list" style="color:#5DCAA5" aria-hidden="true"></i><div><div class="rit">Encuesta de clima</div><div class="ris">25 preguntas · 5 dimensiones · toda la org.</div></div></div>
+        <div class="ri"><i class="ti ti-message-circle" style="color:#5DCAA5" aria-hidden="true"></i><div><div class="rit">Focus groups</div><div class="ris">Soporte y GP por separado</div></div></div>
+      </div>
+    </div>
+    <div class="rp">
+      <div class="rd" style="background:#0D1B2A;color:#C9A84C;border:2px solid #C9A84C">3</div>
+      <div class="phd"><span class="sb" style="background:rgba(201,168,76,.1);color:#C9A84C">Semana 4–6</span><h3>Síntesis, diseño y primeros quick wins</h3></div>
+      <div class="ri2">
+        <div class="ri"><i class="ti ti-chart-bar" style="color:#C9A84C" aria-hidden="true"></i><div><div class="rit">Consolidación de hallazgos</div><div class="ris">Informe por pilar con evidencia del campo</div></div></div>
+        <div class="ri"><i class="ti ti-check" style="color:#C9A84C" aria-hidden="true"></i><div><div class="rit">Validación con dirección</div><div class="ris">¿Las prioridades son las correctas?</div></div></div>
+        <div class="ri"><i class="ti ti-star" style="color:#C9A84C" aria-hidden="true"></i><div><div class="rit">1er reconocimiento público</div><div class="ris">Quick win cultural — años de servicio + hito</div></div></div>
+        <div class="ri"><i class="ti ti-bell" style="color:#C9A84C" aria-hidden="true"></i><div><div class="rit">Comunicado oficial</div><div class="ris">Estrenar el protocolo con cambio real</div></div></div>
+      </div>
+      <div class="rqw"><i class="ti ti-rocket" aria-hidden="true"></i><div><div class="rqwt">Al cierre de la semana 6</div><div class="rqws">Plan de 12 meses aprobado · Quick wins activados · Matriz RACI en borrador · Dashboard con resultados de encuesta</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ENTREGABLES -->
+<div class="sec" id="entregables">
+  <div class="pill">Así se verían nuestros entregables</div>
+  <div class="sh">Metodologías que<br><span>se ven y se usan.</span></div>
+  <div class="bar"></div>
+  <p style="font-size:13px;color:#7BA8C4;margin-bottom:5px;line-height:1.7">Cada entregable está diseñado para operar en la realidad de tu empresa desde el día uno.</p>
+  <p style="font-size:11px;color:#C9A84C;font-style:italic;margin-bottom:20px">Toca cada tab para ver cómo se vería:</p>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('raci')">Matriz RACI</button>
+    <button class="tab" onclick="showTab('encuesta')">Encuesta de clima</button>
+    <button class="tab" onclick="showTab('dashboard')">Dashboard cultural</button>
+    <button class="tab" onclick="showTab('fidelizacion')">Programa de fidelización</button>
+    <button class="tab" onclick="showTab('liga')">Liga colaborativa</button>
+    <button class="tab" onclick="showTab('boletin')">Boletín de cambios</button>
+    <button class="tab" onclick="showTab('qa')">Q&A líderes</button>
+  </div>
+
+  <div id="tab-raci" class="dp active">
+    <div class="dh"><div class="di" style="background:rgba(91,159,212,.15)"><i class="ti ti-table" style="font-size:18px;color:#5B9FD4" aria-hidden="true"></i></div><div><h3>Matriz RACI completa</h3><p>Pilar 01 · Mapa de autoridad por área de soporte y tipo de decisión</p></div></div>
+    <div class="mw">
+      <div class="mb"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span>Matriz RACI · Áreas de soporte · v1.0</span></div>
+      <table class="rt"><thead><tr><th>Decisión</th><th>Soporte</th><th>GP</th><th>VP</th></tr></thead>
+      <tbody>
+        <tr><td>Contratación de transporte urgente</td><td><span class="bg br">R</span></td><td><span class="bg bi">I</span></td><td><span class="bg ba">A</span></td></tr>
+        <tr><td>Compra de insumos &gt; RD$50,000</td><td><span class="bg bc">C</span></td><td><span class="bg ba">A</span></td><td><span class="bg ba">A</span></td></tr>
+        <tr><td>Cambio de proveedor administrativo</td><td><span class="bg br">R</span></td><td><span class="bg bc">C</span></td><td><span class="bg ba">A</span></td></tr>
+        <tr><td>Asignación de personal entre proyectos</td><td><span class="bg bc">C</span></td><td><span class="bg br">R</span></td><td><span class="bg ba">A</span></td></tr>
+        <tr><td>Aprobación de horas extra</td><td><span class="bg br">R</span></td><td><span class="bg bi">I</span></td><td><span class="bg ba">A</span></td></tr>
+      </tbody></table>
+      <div class="leg"><span><span class="bg br" style="margin-right:4px">R</span>Responsable</span><span><span class="bg ba" style="margin-right:4px">A</span>Aprobador</span><span><span class="bg bc" style="margin-right:4px">C</span>Consultado</span><span><span class="bg bi" style="margin-right:4px">I</span>Informado</span></div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">Extracto del entregable real. La matriz completa cubre los 3 áreas de soporte con +20 tipos de decisiones.</p>
+  </div>
+
+  <div id="tab-encuesta" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(93,202,165,.15)"><i class="ti ti-clipboard-list" style="font-size:18px;color:#5DCAA5" aria-hidden="true"></i></div><div><h3>Encuesta de clima organizacional</h3><p>Pilar 03 · 5 dimensiones · 25 preguntas · Toda la organización</p></div></div>
+    <div class="mw">
+      <div class="mb"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span>Encuesta de clima · Colaborador · Julio 2025</span></div>
+      <div class="ei2">
+        <div class="eq"><div class="dm">Liderazgo</div><div class="q">Mi líder directo me da retroalimentación clara sobre mi trabajo.</div><div class="sc"><div class="sn">1</div><div class="sn">2</div><div class="sn">3</div><div class="sn sel">4</div><div class="sn">5</div></div></div>
+        <div class="eq" style="border-left-color:#C9A84C"><div class="dm" style="color:#C9A84C">Sentido de pertenencia</div><div class="q">Me siento orgulloso/a de trabajar en esta empresa.</div><div class="sc"><div class="sn">1</div><div class="sn">2</div><div class="sn sel" style="background:#C9A84C;border-color:#C9A84C">3</div><div class="sn">4</div><div class="sn">5</div></div></div>
+        <div class="eq" style="border-left-color:#5DCAA5"><div class="dm" style="color:#5DCAA5">Colaboración</div><div class="q">Las áreas de soporte y los proyectos trabajan como un equipo integrado.</div><div class="sc"><div class="sn">1</div><div class="sn">2</div><div class="sn">3</div><div class="sn">4</div><div class="sn sel" style="background:#5DCAA5;border-color:#5DCAA5;color:#04342C">5</div></div></div>
+        <div class="eq" style="border-left-color:#7BA8D4"><div class="dm" style="color:#7BA8D4">Confianza</div><div class="q">En esta empresa puedo expresar mis opiniones sin temor a consecuencias.</div><div class="sc"><div class="sn">1</div><div class="sn">2</div><div class="sn sel" style="background:#7BA8D4;border-color:#7BA8D4;color:#0A1628">3</div><div class="sn">4</div><div class="sn">5</div></div></div>
+      </div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">Dashboard ejecutivo con resultados en 5 días hábiles. Presentación a dirección con 3 acciones inmediatas concretas.</p>
+  </div>
+
+  <div id="tab-dashboard" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(91,159,212,.15)"><i class="ti ti-chart-bar" style="font-size:18px;color:#5B9FD4" aria-hidden="true"></i></div><div><h3>Dashboard cultural</h3><p>Pilar 03 · Métricas de cultura en tiempo real por área y trimestre</p></div></div>
+    <div class="mw">
+      <div class="mb"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span>Dashboard cultural · Q1 2025</span></div>
+      <div class="dg">
+        <div class="kp"><div class="kl">NPS interno</div><div class="kv">7.4</div><div class="kd">+1.2 vs mes anterior</div><div class="kb"><div class="kf" style="width:74%"></div></div></div>
+        <div class="kp"><div class="kl">Velocidad decisional</div><div class="kv">38h</div><div class="kd">Meta: &lt;48h ✓</div><div class="kb"><div class="kf" style="width:60%;background:#5DCAA5"></div></div></div>
+        <div class="kp"><div class="kl">Sentido de pertenencia</div><div class="kv">68%</div><div class="kd">Colaboradores satisfechos</div><div class="kb"><div class="kf" style="width:68%;background:#5B9FD4"></div></div></div>
+        <div class="kp"><div class="kl">Escaladas reducidas</div><div class="kv">-54%</div><div class="kd">vs línea base sem. 6</div><div class="kb"><div class="kf" style="width:54%;background:#5DCAA5"></div></div></div>
+      </div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">Actualización mensual. Compartido con dirección y líderes de área en reunión quincenal.</p>
+  </div>
+
+  <div id="tab-fidelizacion" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(201,168,76,.15)"><i class="ti ti-star" style="font-size:18px;color:#C9A84C" aria-hidden="true"></i></div><div><h3>Programa de fidelización</h3><p>Pilar 03 · Reconozcamos los pequeños logros — quick win cultural desde el mes 2</p></div></div>
+    <div class="mw">
+      <div class="mb"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span>Programa de reconocimiento · Ciclo trimestral</span></div>
+      <div class="ft" style="display:flex;align-items:center;gap:7px">Por años de servicio <span style="flex:1;height:1px;background:rgba(201,168,76,.2);display:inline-block"></span></div>
+      <div class="pi"><div class="pa" style="background:rgba(91,159,212,.2);color:#5B9FD4">JR</div><div><div class="pn2">Juan Rodríguez · Soporte Admin</div><div class="pr">Reconocimiento por 3 años de servicio</div></div><div class="aw" style="background:rgba(91,159,212,.15);color:#5B9FD4">3 años</div></div>
+      <div class="pi" style="margin-bottom:12px"><div class="pa" style="background:rgba(201,168,76,.2);color:#C9A84C">LC</div><div><div class="pn2">Luis Castro · Transporte</div><div class="pr">Reconocimiento por 5 años de servicio</div></div><div class="aw" style="background:rgba(201,168,76,.15);color:#C9A84C">5 años</div></div>
+      <div class="ft" style="display:flex;align-items:center;gap:7px">Por cumplimiento de hito en roadmap <span style="flex:1;height:1px;background:rgba(201,168,76,.2);display:inline-block"></span></div>
+      <div class="pi"><div class="pa" style="background:rgba(93,202,165,.2);color:#5DCAA5">MT</div><div><div class="pn2">María Torres · Proyecto Norte</div><div class="pr">Fase 2 entregada con 3 días de anticipación</div></div><div class="aw" style="background:rgba(93,202,165,.15);color:#5DCAA5">Hito logrado</div></div>
+      <div class="pi" style="margin-bottom:12px"><div class="pa" style="background:rgba(93,202,165,.2);color:#5DCAA5">AP</div><div><div class="pn2">Ana Pérez · Proyecto Sur</div><div class="pr">Fase 1 completada en tiempo y presupuesto</div></div><div class="aw" style="background:rgba(93,202,165,.15);color:#5DCAA5">Hito logrado</div></div>
+      <div class="ft" style="display:flex;align-items:center;gap:7px">Por KPI logrado <span style="flex:1;height:1px;background:rgba(201,168,76,.2);display:inline-block"></span></div>
+      <div class="pi"><div class="pa" style="background:rgba(201,168,76,.2);color:#C9A84C">RM</div><div><div class="pn2">Roberto Méndez · Admin</div><div class="pr">KPI de velocidad decisional &lt;48h · Q1 2025</div></div><div class="aw" style="background:rgba(201,168,76,.15);color:#C9A84C">KPI logrado</div></div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">El reconocimiento se hace público en la reunión mensual de líderes. Ciclo trimestral con registro en dashboard cultural.</p>
+  </div>
+
+  <div id="tab-liga" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(201,168,76,.15)"><i class="ti ti-trophy" style="font-size:18px;color:#C9A84C" aria-hidden="true"></i></div><div><h3>Liga colaborativa</h3><p>Pilar 03 · Premio trimestral a la mesa más colaborativa de la organización</p></div></div>
+    <div class="mw">
+      <div class="mb"><div class="dot" style="background:#FF5F57"></div><div class="dot" style="background:#FEBC2E"></div><div class="dot" style="background:#28C840"></div><span>Liga colaborativa · Q1 2025 · Resultados finales</span></div>
+      <div class="lcard">
+        <div class="ltop"><i class="ti ti-trophy" aria-hidden="true"></i><div><h4>Liga Colaborativa Q1 2025</h4><p>Clasificación por nivel de colaboración entre proyectos y soporte</p></div></div>
+        <div class="lteams">
+          <div class="lt"><div class="lpos" style="color:#C9A84C">1</div><div class="ltn">Equipo Sur</div><div class="lts">94 pts</div><div style="font-size:15px;margin-top:3px">🥇</div></div>
+          <div class="lt"><div class="lpos" style="color:#8FB3D4">2</div><div class="ltn">Equipo Norte</div><div class="lts">87 pts</div><div style="font-size:15px;margin-top:3px">🥈</div></div>
+          <div class="lt"><div class="lpos" style="color:#7B8A6A">3</div><div class="ltn">Equipo Este</div><div class="lts">81 pts</div><div style="font-size:15px;margin-top:3px">🥉</div></div>
+        </div>
+        <div class="lpz">Premio Q1: día libre + reconocimiento público en reunión de liderazgo</div>
+      </div>
+      <div class="lcrit">
+        <div><span style="color:#C9A84C;font-weight:700">35%</span> · Colaboración entre áreas</div>
+        <div><span style="color:#C9A84C;font-weight:700">30%</span> · Cumplimiento de hitos</div>
+        <div><span style="color:#C9A84C;font-weight:700">20%</span> · NPS interno del equipo</div>
+        <div><span style="color:#C9A84C;font-weight:700">15%</span> · Participación en encuesta</div>
+      </div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">Frecuencia trimestral. Los criterios se definen con la dirección en la semana 4 del diagnóstico.</p>
+  </div>
+
+  <div id="tab-boletin" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(123,168,212,.15)"><i class="ti ti-mail" style="font-size:18px;color:#7BA8D4" aria-hidden="true"></i></div><div><h3>Boletín de cambios organizacionales</h3><p>Pilar 02 · Comunicación formal antes de que llegue por rumor</p></div></div>
+    <div class="mw">
+      <div class="bm">
+        <div class="bh"><div class="bl">C</div><div><div style="font-size:12px;font-weight:700;color:#fff">Boletín Organizacional · Edición #3</div><div style="font-size:9px;color:#8FB3D4">Julio 2025 · Para todo el equipo</div></div></div>
+        <div class="bb">
+          <div class="bs2"><div class="bst">Lo que cambió este mes</div><h4>Mesa de Autonomía: nuevas decisiones delegadas</h4><p>A partir del 1 de julio, soporte puede aprobar contrataciones de transporte urgente sin escalar al VP.</p></div>
+          <div class="bd2"></div>
+          <div class="bs2"><div class="bst">Reconocimiento del mes</div><h4>Felicitamos al equipo del Proyecto Norte</h4><p>Completaron la fase 2 del roadmap con 3 días de anticipación.</p></div>
+          <div class="bd2"></div>
+          <div class="bs2"><div class="bst">Próximos pasos</div><h4>Encuesta de clima · Semana del 14 de julio</h4><p>Toma 8 minutos. Tu voz construye esta organización.</p></div>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">Frecuencia mensual. Distribuido antes de que ningún cambio llegue por rumor.</p>
+  </div>
+
+  <div id="tab-qa" class="dp">
+    <div class="dh"><div class="di" style="background:rgba(93,202,165,.15)"><i class="ti ti-message-circle" style="font-size:18px;color:#5DCAA5" aria-hidden="true"></i></div><div><h3>Q&A para líderes</h3><p>Pilar 02 · Talking points listos para comunicar cambios a los equipos</p></div></div>
+    <div class="mw">
+      <div style="font-size:8px;font-weight:700;letter-spacing:2px;color:#5A7A90;text-transform:uppercase;margin-bottom:11px">Guía para líderes · Julio 2025 · Confidencial</div>
+      <div class="qa"><div class="ql">Pregunta frecuente</div><div class="qt">¿Por qué ahora podemos decidir sin consultar al VP?</div><div class="at">La empresa crece y necesitamos que el soporte opere con más agilidad. No es pérdida de control — es una señal de confianza. El VP sigue siendo informado de las decisiones importantes.</div></div>
+      <div class="qa"><div class="ql">Pregunta frecuente</div><div class="qt">¿Qué pasa si me equivoco en una decisión?</div><div class="at">Las decisiones dentro del RACI tienen respaldo institucional. Si algo supera los criterios, existe el protocolo de escalada. Equivocarse dentro del proceso no es un error personal.</div></div>
+      <div class="qa"><div class="ql">Pregunta frecuente</div><div class="qt">¿Esto significa que van a reducir personal?</div><div class="at">No. Esta transformación busca que cada persona haga mejor lo que ya hace. Necesitamos más capacidad, no menos gente.</div></div>
+    </div>
+    <p style="font-size:10px;color:#4A6A80">El toolkit completo incluye 12 Q&A por módulo de cambio + guías de cascada comunicacional.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- METODOLOGÍA -->
+<div class="sec alt">
+  <div class="pill">Nuestra forma de trabajo</div>
+  <div class="sh">Cómo trabajamos <span>contigo.</span></div>
+  <div class="bar"></div>
+  <div class="ml">
+    <div class="mi"><div class="mn">01</div><div><h4>Escucha activa sobre el terreno</h4><p>Vamos al campo antes de diseñar cualquier solución. Tu realidad es nuestro punto de partida, no un manual.</p></div></div>
+    <div class="mi"><div class="mn">02</div><div><h4>Diagnóstico con evidencia</h4><p>Aplicamos la encuesta de clima, hacemos focus groups y observamos cómo opera la Mesa de Autonomía en la práctica. Nada se asume — todo se mide.</p></div></div>
+    <div class="mi"><div class="mn">03</div><div><h4>Co-construcción con los equipos</h4><p>La Matriz RACI y la filosofía organizacional se diseñan con la gente, no para ella. Nadie recibe un manual — todos participan en construirlo.</p></div></div>
+    <div class="mi"><div class="mn">04</div><div><h4>Resultados desde la semana 3</h4><p>Primer reconocimiento público y comunicado oficial antes de cerrar el diagnóstico. Resultados visibles antes del mes 2.</p></div></div>
+    <div class="mi"><div class="mn">05</div><div><h4>Todo se mide</h4><p>Dashboard de velocidad decisional · NPS interno · % escaladas reducidas · Índice de sentido de pertenencia.</p></div></div>
+  </div>
+  <div class="tg">
+    <span class="tp">En campo</span><span class="tp">Co-construido</span><span class="tp">Quick wins sem. 3</span><span class="tp">Todo medible</span><span class="tp">Sin imposición</span><span class="tp">Entregables reales</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- TRANSFORMACIÓN -->
+<div class="sec">
+  <div class="pill">La transformación</div>
+  <div class="sh">Al terminar, tu organización<br><span>va a funcionar diferente.</span></div>
+  <div class="bar"></div>
+  <p class="sub" style="margin-bottom:24px">No aprenderás teoría. Construirás sistemas reales que ordenan cómo se decide, cómo se comunica y cómo se vive la cultura.</p>
+  <div class="trf">
+    <div class="tc"><i class="ti ti-settings" style="color:#5B9FD4" aria-hidden="true"></i><h4>Decisiones que fluyen</h4><p>Marco RACI activo. Las áreas de soporte saben qué pueden decidir sin escalar al VP.</p></div>
+    <div class="tc"><i class="ti ti-speakerphone" style="color:#C9A84C" aria-hidden="true"></i><h4>Comunicación que llega</h4><p>Protocolos y toolkit para que ningún cambio se entere por rumor.</p></div>
+    <div class="tc"><i class="ti ti-trophy" style="color:#5DCAA5" aria-hidden="true"></i><h4>Cultura que se vive</h4><p>Reconocimiento estructurado y liga colaborativa activa desde el mes 2.</p></div>
+    <div class="tc"><i class="ti ti-rocket" style="color:#C9A84C" aria-hidden="true"></i><h4>Ventaja competitiva real</h4><p>Una organización con filosofía compartida entre los 6 proyectos. Por diseño, no por imposición.</p></div>
+  </div>
+  <div class="bs3">
+    <div class="bn">12<span> m.</span></div>
+    <p>Para transformar cómo opera, decide y se comunica tu organización — con resultados visibles desde la semana 3.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CIERRE -->
+<div class="closing" id="cierre">
+  <div class="pill">El futuro de tu organización</div>
+  <h2>Tu empresa ya cambió.<br>La diferencia será<br>quién ordena la casa primero.</h2>
+  <p>Las organizaciones que construyen sistemas internos sólidos hoy van a tener una ventaja que las demás van a tardar años en alcanzar.</p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:24px">
+    <button class="cta-btn" onclick="sendPrompt('Quiero agendar una reunión de alineación para revisar la propuesta de transformación organizacional')">Agendar reunión de alineación ↗</button>
+    <button class="cta-outline" onclick="sendPrompt('Quiero profundizar en los detalles del Pilar 01 de Modelo de Gobierno y Autonomía')">Ver los pilares en detalle ↗</button>
+  </div>
+  <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:16px">
+    <span style="font-size:11px;color:#3A5A70"><i class="ti ti-map-pin" style="font-size:12px;margin-right:3px" aria-hidden="true"></i>República Dominicana</span>
+    <span style="font-size:11px;color:#3A5A70"><i class="ti ti-calendar" style="font-size:12px;margin-right:3px" aria-hidden="true"></i>2025</span>
+    <span style="font-size:11px;color:#3A5A70"><i class="ti ti-lock" style="font-size:12px;margin-right:3px" aria-hidden="true"></i>Confidencial</span>
+  </div>
+  <div class="ft2">Propuesta de Transformación Organizacional · Gestión del Cambio · Cultura & Fidelización</div>
+</div>
+
+</div>
+
+<script>
+function showTab(id){
+  var ids=['raci','encuesta','dashboard','fidelizacion','liga','boletin','qa'];
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',ids[i]===id)});
+  document.querySelectorAll('.dp').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('tab-'+id).classList.add('active');
+}
+</script>
